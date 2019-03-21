@@ -18,8 +18,6 @@ LedBr = 15
 ad = 0
 d = 0
 d2 = 0
-rollingcode = &h3fa    '6 bytes before work memory limit (&400)
-6digits = 0    'counter for button presses
 
 '----- Main -----------------------------------------------
 Sub Start()
@@ -183,11 +181,6 @@ Sub DEMO_TOUCH()
                 Print &H1f,&h4B,&h21,mpx,LedBr * 16
             End If
         Next mpx
-
-        If 6digits < 6 Then
-            VPoke rollingcode + 6digits, SwMaxNum
-            6digits = 6digits + 1
-        End If
         
         Sleep 1
         GoTo DEMO_TOUCH_L1
