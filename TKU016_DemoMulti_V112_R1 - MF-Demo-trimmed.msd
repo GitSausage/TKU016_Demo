@@ -71,34 +71,10 @@ Sub Start()
 	Next mpx
 	'--------------------------------------------
 	
-    Idle1:
-        IDLE_TOUCH
-        GoTo Idle1
-    StoreCode:
+    Loop1:
         DEMO_TOUCH
-        GoTo Storecode
-    GetCode:
+        GoTo Loop1        
         
-        
-End Sub
-
-Sub IDLE_TOUCH()
-    wakeup = 0    'flag for checking user touch input
-    
-    Print &h1f,&h4b,&hf0,&h00	' Txd Disable
-    '--- SW Level Order ---
-    Print &h1f,&h4b,&h12    ' read-in triggered switches
-    Print &h1f,&h4b,&hf0,&h01	' Txd Enable
-    
-    d = VPeek( 1)    ' Read in 2nd byte of read buffer.  The max level switch
-    if d <> &hff Then
-        wakeup = 1
-    End If
-    
-    If wakeup = 1 Then
-    GoTo Loop1
-    End If
-    
 End Sub
 
 Sub DEMO_TOUCH()
