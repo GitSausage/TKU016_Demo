@@ -7,7 +7,7 @@
 '                         button sound#4 
 '                         no brightness change
 '
-'  V1.01    2019/03/22    Idle Mode
+'  V1.01    2019/03/22    TBA
 
 'initializations
 mpx = 0
