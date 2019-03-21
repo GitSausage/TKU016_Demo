@@ -102,7 +102,7 @@ Sub DEMO_TOUCH()
             d2 = TpIN
         
             If d2 > d Then    ' if the reference value is greater than the threshold value
-                VPoke &h201, 1		'REF Over >> detected touch.  comparing &h1200 to previously stored &h300
+                VPoke &h201, 1		'REF Over >> detected touch. 
             End If
         Next mpx
         '---------------------------
